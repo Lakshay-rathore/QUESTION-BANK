@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Question Bank</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #e8ecf1;
+    text-align: center;
+    padding-top: 80px;
+}
+
+h1{
+    color: #1f2937;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+p{
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.class-container{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.subject{
+    width: 180px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.subject:hover{
+    background-color: #475569;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.combined{
+    display: block;
+    margin: 0 auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Question Bank</h1>
+
+<p>Select your class</p>
+
+<div class="class-container">
+    <button class="subject" onclick="showSubjects('11')">
+        Class 11th
+    </button>
+
+    <button class="subject" onclick="showSubjects('12')">
+        Class 12th
+    </button>
+</div>
+
+<button class="subject combined" onclick="showSubjects('combined')">
+    Combined
+</button>
+
+<div id="subjects" style="display:none; margin-top:30px;">
+
+    <h2 id="classTitle"></h2>
+
+    <button class="subject">Physics</button>
+
+    <button class="subject">Chemistry</button>
+
+    <button class="subject">Biology</button>
+
+</div>
+<script>
+
+function showSubjects(selectedClass){
+
+    document.getElementById("subjects").style.display = "block";
+
+    if(selectedClass === "11"){
+        document.getElementById("classTitle").innerText =
+        "Class 11th";
+    }
+
+    else if(selectedClass === "12"){
+        document.getElementById("classTitle").innerText =
+        "Class 12th";
+    }
+
+    else{
+        document.getElementById("classTitle").innerText =
+        "Combined";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
